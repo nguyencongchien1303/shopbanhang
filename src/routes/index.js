@@ -1,6 +1,7 @@
 var express = require("express")
 var router = express.Router()
 var contactModel2 = require('../model/sanpham.js');
+import shop from "./../controllers/index"
 
 /* GET home page. */
 router.get("/", function(req, res, next) {
@@ -10,10 +11,9 @@ router.get("/", function(req, res, next) {
   })
   
 })
-
-router.get("/shop.html", function(req, res, next) {
-  res.render("shop", { title: "Express" })
-})
+let initRouter = (app) =>{
+  router.get("/shop.html", shop.getShop)
+}
 
 router.get("/about.html", function(req, res, next) {
   res.render("about", { title: "Express" })
@@ -59,4 +59,4 @@ router.get("/login.html", function(req, res, next) {
 })
 
 
-module.exports = router
+module.exports = {router,initRouter}
