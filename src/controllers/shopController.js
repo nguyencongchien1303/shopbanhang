@@ -1,4 +1,4 @@
-let getShop = (req,res) =>{
+let getShop = function (req,res){
   return res.render("shop")
 }
 
