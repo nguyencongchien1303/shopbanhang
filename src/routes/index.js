@@ -1,12 +1,8 @@
 var express = require("express")
 var router = express.Router()
-jwt    = require('jsonwebtoken')
+let jwt    = require('jsonwebtoken')
 var contactModel = require('../model/account.js');
 var contactModel2 = require('../model/sanpham.js');
-//router.set('Secret', contactModel.secret);
-//var config = require('../model/config.js')
-
-//router.set('Secret',config.secret);
 
 /* GET home page. */
 router.get("/", function(req, res, next) {
