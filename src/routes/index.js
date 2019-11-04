@@ -11,11 +11,11 @@ router.get("/", function(req, res, next) {
   })
   
 })
-// let initRouter = (app) =>{
-//   router.get("/shop.html", shop.getShop)
-// }
+let initRouter = (app) =>{
+  router.get("/shop.html", shop.getShop)
+}
 
-router.get("/shop.html", shop.getShop)
+// router.get("/shop.html", shop.getShop)
 
 router.get("/about.html", function(req, res, next) {
   res.render("about", { title: "Express" })
@@ -61,4 +61,4 @@ router.get("/login.html", function(req, res, next) {
 })
 
 
-module.exports = {initRouter}
+module.exports = initRouter
