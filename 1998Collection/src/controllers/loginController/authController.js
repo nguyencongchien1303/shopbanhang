@@ -67,6 +67,13 @@ let getLogout = (req,res) =>{
   return res.redirect("/login-register")
 }
 
+let checkLogin = (req,res,next) => {
+  if(!req.isAuthenticated()){ // nếu nó chưa đăng nhập thì đá về trang đăng nhập
+    next();
+  }
+  next();
+}
+
 let checkLoggedIn = (req,res,next) =>{
   if(!req.isAuthenticated()){ // nếu nó chưa đăng nhập thì đá về trang đăng nhập
     return res.redirect("/login-register")
@@ -79,6 +86,7 @@ let checkLoggedOut = (req,res,next) =>{
     return res.redirect("/login-register")
   }
   next();
+  
 }
 
 module.exports = {
@@ -87,5 +95,6 @@ module.exports = {
   verifyAccount:verifyAccount,
   getLogout:getLogout,
   checkLoggedIn:checkLoggedIn,
-  checkLoggedOut:checkLoggedOut
+  checkLoggedOut:checkLoggedOut,
+  checkLogin:checkLogin
 }

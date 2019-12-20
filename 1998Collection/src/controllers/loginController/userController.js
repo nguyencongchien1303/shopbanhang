@@ -4,6 +4,7 @@ import { transErrors,transSuccess } from "./../../../lang/vi"
 import uuidv4 from "uuid/v4"
 import {user} from "./../../services/index"
 import fsExtra from "fs-extra"
+import { validationResult } from "express-validator/check"
 
 let storageAvatar = multer.diskStorage({
   //nơi lưu trữ ảnh
@@ -57,6 +58,17 @@ let updateAvatar = (req, res) => {
 }
 
 let updateInfo = async (req,res) =>{
+  let errorArr = []
+  let validationError = validationResult(req)
+  if (!validationError.isEmpty()) {
+    //nếu !.isEmpty() này mà có lỗi thì nó sẽ đi vào trong if
+    let errors = Object.values(validationError.mapped()) // thằng .mapped này là nó sẽ log tất cả các lỗi rồi bỏ vào 1 cái mảng
+    errors.forEach(item => {
+      errorArr.push(item.msg) //cái ở trên nó sẽ đưa ra nguyên 1 mảng lỗi to đùng thì chúng ta chỉ cần log ra cái msg mà thôi. nên lưu cái msg vào mảng errorArr nhá
+    })
+    
+    return res.status(500).send(errorArr);
+  }
   try {
     let updateUserItem = req.body; 
     await user.updateUser(req.user._id,updateUserItem)
@@ -69,7 +81,21 @@ let updateInfo = async (req,res) =>{
   }
 }
 
+let updatePassword = async (req,res) =>{
+  try {
+    let updateUserItem = req.body;
+    await user.updatePassword(req.user._id, updateUserItem)
+    let result = {
+      message: transSuccess.user_password_updated
+    }
+    return res.status(200).send(result)
+  } catch (error) {
+    return res.status(500).send(error)
+  }
+}
+
 module.exports = {
   updateAvatar: updateAvatar,
-  updateInfo:updateInfo
+  updateInfo:updateInfo,
+  updatePassword:updatePassword
 }

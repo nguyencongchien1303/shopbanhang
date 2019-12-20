@@ -1,0 +1,2 @@
+{ "_id" : "uP9qLUwie-VKfGpB9NwUmnkLn5Din3io", "expires" : { "$date" : "2019-12-13T14:42:51.193+0000" }, "session" : "{\"cookie\":{\"originalMaxAge\":86399981,\"expires\":\"2019-12-13T14:42:51.193Z\",\"httpOnly\":true,\"path\":\"/\"},\"flash\":{},\"passport\":{\"user\":\"5dc56033b399271eb8e00ac7\"}}" },
+{ "_id" : "CLxCeoT58F3T4BM0RZLX7fjSl2p9TeAo", "expires" : { "$date" : "2019-12-14T10:53:51.490+0000" }, "session" : "{\"cookie\":{\"originalMaxAge\":86399967,\"expires\":\"2019-12-14T10:53:51.490Z\",\"httpOnly\":true,\"path\":\"/\"},\"flash\":{},\"cart\":{\"items\":{}}}" }

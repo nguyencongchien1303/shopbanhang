@@ -1,0 +1,4 @@
+{ "_id" : { "$oid" : "5df35d65ec634a15bcda4758" }, "name" : "T-shirt", "nameKhongDau" : "t-shirt", "__v" : 0 },
+{ "_id" : { "$oid" : "5df35d8fec634a15bcda4759" }, "name" : "Jeans", "nameKhongDau" : "jeans", "__v" : 0 },
+{ "_id" : { "$oid" : "5df35da4ec634a15bcda475a" }, "name" : "Pants", "nameKhongDau" : "pants", "__v" : 0 },
+{ "_id" : { "$oid" : "5df35e8469c68c324c7a3614" }, "name" : "Shoes", "nameKhongDau" : "shoes", "__v" : 0 }

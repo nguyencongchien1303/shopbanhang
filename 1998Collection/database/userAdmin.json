@@ -1,0 +1,6 @@
+{ 
+    "_id" : ObjectId("5df0c8d421d55231c4f62c5e"), 
+    "fullname" : "chien", 
+    "email" : "admin@gmail.com", 
+    "password" : "$2b$07$ESU4gBR8csAlHwkjpvccWeESNBXaho7Zlw47.2DOa7yJGdn0GeIcK"
+}
